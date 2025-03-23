@@ -47,9 +47,9 @@ app.post('/process-video', async (c) => {
     const requestId = uuidv4();
     const videoPath = path.join(DOWNLOADS_DIR, `${requestId}.mp4`);
     
-    // Download the video using yt-dlp with user agent and cookies
+    // Download the video using yt-dlp with additional options
     console.log(`Downloading video: ${videoUrl}`);
-    await execAsync(`yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4" --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" --no-check-certificates "${videoUrl}" -o "${videoPath}"`);
+    await execAsync(`yt-dlp -f "best[ext=mp4]" --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" --no-check-certificates --no-warnings --no-playlist --extract-audio --audio-format mp3 --audio-quality 0 "${videoUrl}" -o "${videoPath}"`);
     
     // Process each timestamp pair to create clips
     const clipPaths = [];
