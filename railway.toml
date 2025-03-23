@@ -1,6 +1,6 @@
 [build]
 builder = "nixpacks"
-buildCommand = "npm install && pip3 install --no-cache-dir --upgrade yt-dlp"
+buildCommand = "apt-get update && apt-get install -y yt-dlp && npm install"
 
 [deploy]
 startCommand = "npm start"
