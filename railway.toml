@@ -1,6 +1,6 @@
 [build]
 builder = "nixpacks"
-buildCommand = "npm install"
+buildCommand = "npm install && pip3 install --no-cache-dir --upgrade yt-dlp"
 
 [deploy]
 startCommand = "npm start"
