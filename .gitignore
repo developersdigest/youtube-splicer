@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Downloaded videos and clips
+downloads/
+clips/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db 
