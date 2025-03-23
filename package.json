@@ -18,5 +18,11 @@
   },
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
+  "systemDependencies": [
+    "ffmpeg",
+    "python3",
+    "python3-pip"
+  ],
+  "postinstall": "pip3 install --no-cache-dir yt-dlp"
 } 
